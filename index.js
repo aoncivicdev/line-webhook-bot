@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.json());
 
-const CHANNEL_ACCESS_TOKEN = 'ใส่ ACCESS TOKEN ของ LINE BOT ที่นี่';
+const CHANNEL_ACCESS_TOKEN = '9SL0rceqGxMvV3pyd+Dm3y0uIGHARXyHOHx4oh3/zP5wwq4z79od4FmVHCnJ6XnVjC5d5GqxGGDETFMgeHv67jMZywVHag0HJrr5XoRgYb+dhz0FK84ZMslBRUbhAzizhHufFvhiYZCuAgCU49uzAQdB04t89/1O/w1cDnyilFU=';
 
 app.post('/webhook', async (req, res) => {
   const events = req.body.events;
