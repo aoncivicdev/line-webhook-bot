@@ -4,8 +4,7 @@ const app = express();
 
 app.use(express.json());
 
-// ✅ TOKEN ใหม่ที่คุณอ้นให้มา
-const CHANNEL_ACCESS_TOKEN = 'fO+NpZFpWc5mb3j3zfg+QJNM5G7yY9KpDOCiOXbYVwLVGG0qxhTrFUsNLfWnZC4ZjC5d5GqxGGDETFMgeHv67jMZywVHag0HJrr5XoRgYb9pxmFNFYPK09Qaj4JK067jUyxU8seCYfOltGPPuE0n2gdB04t89/1O/w1cDnyilFU=';
+const CHANNEL_ACCESS_TOKEN = '9SL0rceqGxMvV3pyd+Dm3y0uIGHARXyHOHx4oh3/zP5wwq4z79od4FmVHCnJ6XnVjC5d5GqxGGDETFMgeHv67jMZywVHag0HJrr5XoRgYb+dhz0FK84ZMslBRUbhAzizhHufFvhiYZCuAgCU49uzAQdB04t89/1O/w1cDnyilFU=';
 
 app.post('/webhook', async (req, res) => {
   const events = req.body.events;
@@ -14,11 +13,6 @@ app.post('/webhook', async (req, res) => {
     if (event.type === 'message' && event.message.type === 'text') {
       const replyToken = event.replyToken;
       const userMessage = event.message.text;
-      const userId = event.source.userId;
-
-      // ✅ แสดง userId และข้อความ
-      console.log("📌 userId:", userId);
-      console.log("💬 ข้อความ:", userMessage);
 
       await axios.post('https://api.line.me/v2/bot/message/reply', {
         replyToken: replyToken,
@@ -34,13 +28,13 @@ app.post('/webhook', async (req, res) => {
     }
   }
 
-  res.sendStatus(200); // สำคัญ!
+  res.sendStatus(200); // ✅ สำคัญมาก! ต้องมี response 200
 });
 
 app.get("/", (req, res) => {
-  res.send("🚀 LINE Webhook ของอ้นพร้อมแล้วจ้า!");
+  res.send("LINE Webhook ของอ้นพร้อมแล้วจ้า!");
 });
 
 app.listen(3000, () => {
-  console.log("✅ Bot is running on port 3000");
+  console.log("Bot is running on port 3000");
 });
