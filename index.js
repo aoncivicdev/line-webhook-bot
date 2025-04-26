@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.json());
 
-const CHANNEL_ACCESS_TOKEN = '9SL0rceqGxMvV3pyd+Dm3y0uIGHARXyHOHx4oh3/zP5wwq4z79od4FmVHCnJ6XnVjC5d5GqxGGDETFMgeHv67jMZywVHag0HJrr5XoRgYb+dhz0FK84ZMslBRUbhAzizhHufFvhiYZCuAgCU49uzAQdB04t89/1O/w1cDnyilFU=';
+const CHANNEL_ACCESS_TOKEN = 'LvjzsFkpQ+Zi5AIZ1FAOJ+3APp6/hIDdNbHiEf5fJsIuIX2tIaXW0FBwWRtvCU1KjC5d5GqxGGDETFMgeHv67jMZywVHag0HJrr5XoRgYb9jeN8nIYiAuTBzf+ii2K+Dv4CZWA9oNGox+f8bxfoH+AdB04t89/1O/w1cDnyilFU=';
 
 app.post('/webhook', async (req, res) => {
   const events = req.body.events;
